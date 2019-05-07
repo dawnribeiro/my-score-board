@@ -5,10 +5,11 @@ let team2score = 0
 
 const addOneToTeam1Score = () => {
   console.log('adding 1 to team score')
-  if (team1score >= 21) {
+  team1score += 1
+  if (team1score > 21) {
     document.querySelector('.team1Score').textContent = '21'
-  } else {
-    team1score += 1
+  } else if (team1score === 21) {
+    document.querySelector('.winner1').textContent = 'You are the winner!!!'
   }
   updateTeam1Score()
   // add 1 to score
@@ -18,14 +19,15 @@ const addOneToTeam1Score = () => {
 
 const addOneToTeam2Score = () => {
   console.log('adding 1 to team score')
-  if (team2score >= 21) {
+  team2score += 1
+  if (team2score > 21) {
     document.querySelector('.team2Score').textContent = '21'
-  } else {
-    team2score += 1
+  } else if (team2score === 21) {
+    document.querySelector('.winner2').textContent = 'You are the winner!!!'
   }
+
   updateTeam2Score()
 }
-
 const updateTeam2Score = () => {
   document.querySelector('.team2Score').textContent = team2score
 }
