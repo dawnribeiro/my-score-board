@@ -36,8 +36,13 @@ const subtractOneFromTeam2Score = () => {
 
 const subtractOneFromTeam1Score = () => {
   console.log('subtracting 1 from team score')
-  team1score -= 1
-  updateTeam1Score()
+  if (team1score <= 0) {
+    document.querySelector('.team1Score').textContent = '0'
+  } else {
+    team1score -= 1
+  }
+  updateTeam1
+  Score()
 }
 
 const changeTeam1Name = () => {
