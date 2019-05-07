@@ -10,6 +10,12 @@ const addOneToTeam1Score = () => {
     document.querySelector('.team1Score').textContent = '21'
   } else if (team1score === 21) {
     document.querySelector('.winner1').textContent = 'You are the winner!!!'
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
+    document.querySelector('.button-update-team-1').disabled = true
+    document.querySelector('.button-update-team-2').disabled = true
   }
   updateTeam1Score()
   // add 1 to score
@@ -24,8 +30,13 @@ const addOneToTeam2Score = () => {
     document.querySelector('.team2Score').textContent = '21'
   } else if (team2score === 21) {
     document.querySelector('.winner2').textContent = 'You are the winner!!!'
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.button-update-team-2').disabled = true
+    document.querySelector('.button-update-team-1').disabled = true
   }
-
   updateTeam2Score()
 }
 const updateTeam2Score = () => {
@@ -70,6 +81,22 @@ const changeTeam2Name = () => {
   document.querySelector('.team2name').textContent = currentValue
 }
 
+const reset = () => {
+  console.log('resetting page')
+  document.querySelector('.team-2-add-1-button').disabled = false
+  document.querySelector('.team-2-subtract-1-button').disabled = false
+  document.querySelector('.team-1-add-1-button').disabled = false
+  document.querySelector('.team-1-subtract-1-button').disabled = false
+  document.querySelector('.button-update-team-2').disabled = false
+  document.querySelector('.button-update-team-1').disabled = false
+  document.querySelector('.team1name').textContent = 'Team 1'
+  document.querySelector('.team2name').textContent = 'Team 2'
+  document.querySelector('.team-1-name-update').value = ''
+  document.querySelector('.team-2-name-update').value = ''
+  document.querySelector('.winner2').textContent = ''
+  document.querySelector('.winner1').textContent = ''
+}
+
 //const name = document.querySelector('.team-1-name-update').value
 //console.log(name)
 
@@ -79,6 +106,8 @@ const main = () => {
   document.querySelector('.team2Score').textContent = team2score
   //document.querySelector('.team1name').textContent = team1name
 }
+
+document.querySelector('.reset-btn').addEventListener('click', reset)
 
 document
   .querySelector('.team-1-add-1-button')
