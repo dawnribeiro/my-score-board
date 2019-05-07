@@ -95,6 +95,8 @@ const reset = () => {
   document.querySelector('.team-2-name-update').value = ''
   document.querySelector('.winner2').textContent = ''
   document.querySelector('.winner1').textContent = ''
+  document.querySelector('.team1Score').textContent = 0
+  document.querySelector('.team2Score').textContent = 0
 }
 
 //const name = document.querySelector('.team-1-name-update').value

@@ -38,3 +38,7 @@ h1 {
 .update-score section {
   margin: 1rem;
 }
+
+.timer-area {
+  text-align: center;
+}
